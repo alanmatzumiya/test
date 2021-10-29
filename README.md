@@ -1,3 +1,3 @@
 # test
 tester repo
-testing action push
+testing git-action
