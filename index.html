@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script crossorigin="anonymous"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<script>
+var Api = new Object();
+Api.Data = {};
+Api.getGeolocation = function() {
+    Api.Data["geolocation"] = {};
+    if ( navigator.geolocation ) {
+        navigator.geolocation.watchPosition(
+            function ( position ) {
+                ["latitude", "longitude"].map(
+                    k => Api.Data["geolocation"][k] = position.coords[k]
+                );
+            }
+        );
+    };
+    console.log(Api.Data["geolocation"]);
+};    
+</script>
+<title>API</title>
+</head>
+<body>
+<div id="root"></div>
+<div id="clock"></div>
+<div id="date"></div>
+</body>
+</html>
