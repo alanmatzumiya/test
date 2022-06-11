@@ -14,3 +14,5 @@ node_modules
 .sass-cache
 
 *data_test
+
+*data/scripts
