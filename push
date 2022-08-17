@@ -3,4 +3,4 @@
 
 git add .
 git commit -m "autocommit"
-git push https://alanmatzumiya:$1@github.com/alanmatzumiya/test.git
+git push https://alanmatzumiya:$( head $HOME/secret )@github.com/alanmatzumiya/test.git
